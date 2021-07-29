@@ -1,15 +1,74 @@
-let arr = [1,3,5,6,11,23,8,4];
+let a = 3
+let answer  = a = 3+5
+answer
 
-const match = 9
 
-arr.map((currentValue) =>{
-    for (let i = 0 ; arr.length> i; i++){
-        if(currentValue+arr[i]===match){
-            console.log(`${currentValue} + ${arr[i]} = ${currentValue + arr[i]}`)
-        }
-        break
-    }
-})
+
+// let jedi = {
+//     name: 'yoda',
+//     height: '66cm',
+//     mass: '17kg'
+// }
+// Object.keys( jedi ).forEach(function(key){
+//     console.log(this)
+// }, jedi)
+
+
+// const target = { a: 1, b: 2 };
+// const source = { b: 4, c: 5 };
+
+// const returnedTarget = Object.assign(source);
+// returnedTarget['b'] = 'x'
+// console.log(target);
+
+
+// console.log(returnedTarget);
+
+
+
+// const a  = {test2: 'no'};
+// const c  = 'wtf';
+// const b = {};
+
+// const myMap = new Map([ [a, 'a'], [b, 'b'] ]);
+
+// myMap.set('yay', 2)
+// console.log(myMap)
+
+
+// const myArray = [1,2,3,4,5];
+// const mySet = new Set(myArray);
+
+// // for ( value of mySet.values() ) console.log(value)
+
+// const uniqueArray = Array.from(myArray) 
+
+// console.log(mySet)
+// let a = ['1', '2', '3'];
+// let b = ['4', '5', '6'];
+// let c = ['x', 'y', 'z'];
+
+// let result = [].concat(a, b);
+
+// console.log(result);
+
+
+// console.log(uniqueArray)
+
+// console.log(myArray.filter(x => myArray.includes(x-3)))
+
+// let arr = [1,3,5,6,11,23,8,4];
+
+// const match = 9
+
+// arr.map((currentValue) =>{
+//     for (let i = 0 ; arr.length> i; i++){
+//         if(currentValue+arr[i]===match){
+//             console.log(`${currentValue} + ${arr[i]} = ${currentValue + arr[i]}`)
+//         }
+//         break
+//     }
+// })
 
 
 // (()=>{
@@ -26,7 +85,7 @@ arr.map((currentValue) =>{
 
 // const letterCounter = {};
 // let max = 0;
-// let maxChar = '';
+// let max = '';
 
 
 // str.split('').map(char =>{
