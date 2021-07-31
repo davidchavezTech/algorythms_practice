@@ -1,94 +1,155 @@
-const cap = 100;
+let A = [1,3,6,4,1,2]
 
-let primesList = []
+let smallest = 1;
 
-for(let i=2; cap > i; i++){
-    if(isItPrime(i)) primesList.push(i)
-}
-function isItPrime(number) {
-    for(let i=2;number>i;i++){
-        if(number%i == 0) return false
+function reOrderArray(A) {
+    
+    let answer
+    let smallest = A[0]
+
+    for(let i=0; A.length>0;i++){
+        let a = A[i]
+        b=A[i+1]
+        if(a>b) smallest.pu
+
     }
-    return true
+    return answer
 }
-let repeatingCircularPrimes = [];
-primesList.forEach(number =>{
-    if(isItCircularPrime(number)) repeatingCircularPrimes.push(number)
-})
+console.log(reOrderArray(A))
+function runIt(A){
+    for(let i=0; A.length>i;i++){
+        let current = A[i]
 
-
-function isItCircularPrime(number){
-    let numberArray = number.toString().split('');
-    //let's check if still prime even after rearranging the order
-    for(let i=0;numberArray.length - 1>i;i++){
-        let lastElement = numberArray.pop(numberArray[numberArray.length-1])
-        numberArray.unshift(lastElement)
-        let itsPrime = isItPrime(parseInt(numberArray.join(''), 10));
-        if(!itsPrime) return
+        if(current==smallest) smallest = smallest + 1;
+        if(current<smallest) smallest = current + 1;
     }
-    return number
+    return smallest
 }
-// for(let i=11;repeatingCircularPrimes.length>i;i++){
-//     getRidOfRepeatingCircularPrimes(repeatingCircularPrimes[i], i)
+
+console.log(runIt(A))
+
+// you can write to stdout for debugging purposes, e.g.
+// console.log('this is a debug message');
+// let A = [1, 3, 6, 4, 1, 2]
+// function solution(A) {
+//     // write your code in JavaScript (Node.js 8.9.4)
+//     let smallest
+//     if(A[0]<0) smallest = 1
+//     else if(A[0]==1) smallest = 2
+//     // else smallest = 1
+//     for(number of A){
+//         for(let i=0; A> i;i++){
+            
+//         }
+//     }
+//     return smallest
 // }
 
-let numberArray;
-let amIdeleted
-console.log(getRidOfRepeatingCircularPrimes(131, 314))
-function getRidOfRepeatingCircularPrimes(number, comparingNumber){
-    numberArray = number.toString().split('');
+// console.log(solution(A))
 
-    numberArray
-    comparingNumber = comparingNumber.toString().split('');
-    comparingNumber
-    if(numberArray.length == 1) return true // means number is less than 9
-    if(numberArray.length != comparingNumber.length) return false //means number's to compare lengths are different
-    console.log(numberArray.length)
-    while(numberArray.length>0){
-        comparingNumber
-        findMeAndDeleteMe(comparingNumber)
-        comparingNumber
-        if(amIdeleted == false){
-            numberArray.length = 0
-            return false
-        }else if(amIdeleted==true){
-            numberArray.length = 0
-            return number
-        }
-    }
-}
-function findMeAndDeleteMe(comparingNumber){
+// ///////////////FINALLY MADE IT WORK! Circular Primes - Elapsed time for 1mil = 1611. With the "square root fix, it's now taking 389 milliseconds only////////
 
-    for(let i=0; numberArray.length>i;i++){
-        i
-        comparingNumber
-        numberArray
-        console.log(numberArray[0])
-        console.log(comparingNumber[i])
-        if(numberArray[0] == comparingNumber[i]){//found a match
-            console.log(numberArray[0])
-            numberArray.splice(0, 1)
-            comparingNumber.splice(i, 1)
-            numberArray
-            comparingNumber
-            i
-            i--;
-        }
-        i
-        console.log(comparingNumber.length)
+// // min = 3 max = 1/3
+// let startingTime = Date.now()
+// const cap = 1000000;
+// const noNoNumbers = [ 0, 2, 4, 5, 6, 8]
+// //get a list of numbers we can divide by
+// let divisibleNumbers = [];
 
-        console.log(comparingNumber[i])
-        console.log(numberArray[0])
-        
-        if(numberArray[0] != comparingNumber[i]){
-            i
-            amIdeleted = false
-        }else if(numberArray.length==0&&comparingNumber.length==0){
-            i
-            amIdeleted = true
-        }
-    }
-}
+
+// let primesList = []
+
+// for(let i = 3; cap > i; i++){
+//     let answer = true
+//     let currentNumberToStringToArray = i.toString().split('')
+//     // if(i==10) debugger
+//     currentNumberToStringToArray.map(x => {
+
+//         if(noNoNumbers.indexOf(parseInt(x, 10))!=-1){
+//             answer = false
+//         }
+//     })
+//     if(answer) divisibleNumbers.push(i)
+// }
+
+
+// for(number of divisibleNumbers){
+//     if(isItPrime(number)) primesList.push(number)
+// }
+
+// function isItPrime(number) {
+//     //only use at most 1/3 of the number
+//     let max = Math.ceil(Math.sqrt(number));
+//     for(let i = 3; max >= i; i++){
+//         if(number%i == 0) return false
+//     }
+//     return true
+// }
+// let repeatingCircularPrimes = [ 2 ];
+// primesList.forEach(number =>{
+//     if(isItCircularPrime(number)) repeatingCircularPrimes.push(number)
+// })
+
+
+// function isItCircularPrime(number){
+//     let numberArray = number.toString().split('');
+//     //let's check if still prime even after rearranging the order
+//     for(let i=0;numberArray.length - 1>i;i++){
+//         let lastElement = numberArray.pop(numberArray[numberArray.length-1])
+//         numberArray.unshift(lastElement)
+//         let itsPrime = isItPrime(parseInt(numberArray.join(''), 10));
+//         if(!itsPrime) return
+//     }
+//     return number
+// }
+
+// let numberArray;
+// let amIdeleted
+
+// let circularPrimeList = Array.from(repeatingCircularPrimes)
+
+// function getRidOfRepeatingCircularPrimes(mainNumber, comparingNumber){
+
+//     let mainNumberArray = mainNumber.toString().split('');
+//     let comparingNumberArray = comparingNumber.toString().split('');
+//     let answer
+//     // if(mainNumber==337&&comparingNumber==733) debugger
+    
+//     compareAndDelete(mainNumberArray, comparingNumberArray)
+//     function compareAndDelete(mainNumberArray, comparingNumberArray){
+//         // if(mainNumber==79) debugger
+//         //check if length are the same
+//         if(mainNumberArray.length == comparingNumberArray.length) {
+//             for(let i = 0; comparingNumberArray.length > i; i++) {//compare every number from comparingNumberArray
+//                 //if we are checking the last number from the comparing array and still no match, numbers are not equal
+//                 if(i==comparingNumberArray.length-1&&mainNumberArray[0]!=comparingNumberArray[i]) break;
+//                 if(mainNumberArray[0]==comparingNumberArray[i]){//found match!
+//                     mainNumberArray.splice(0,1);//remove numbers from arrays
+//                     comparingNumberArray.splice(i,1);
+//                     i= -1; //reset forLoop
+//                 }
+//             }
+//             //check if everything went ok
+//             if (mainNumberArray.length == 0) answer = true 
+//         }else answer = false
+//     }
+//     if(answer) circularPrimeList.splice(circularPrimeList.indexOf(comparingNumber), 1)
+// }
+// repeatingCircularPrimes.forEach(number =>{
+//     //if number is one digit, then don't bother
+//     if(number>10){ 
+//         for(let i = repeatingCircularPrimes.indexOf(number) + 1; repeatingCircularPrimes.length > i; i++){
+//             if(circularPrimeList.includes(number)){ //means the number we are looking for has already been deleted from the other list, ignore it
+//                 getRidOfRepeatingCircularPrimes(number, repeatingCircularPrimes[i])
+//             }
+//         }
+//     }
+// })
+// let endingTime = Date.now();
+// console.log(circularPrimeList)
+// console.log(endingTime - startingTime)
+
+
 ///////////////ANOTHER FAILED ATTEMPT AT CIRCULAR PRIME ALGORYTHM
 
 // let capSizeForSearch = 1000;
