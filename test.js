@@ -1,51 +1,82 @@
-let A = [1,3,6,4,1,2]
-
-let smallest = 1;
-
-function reOrderArray(A) {
+class Song {
+    name;
+    nextSong;
     
-    let answer
-    let smallest = A[0]
-
-    for(let i=0; A.length>0;i++){
-        let a = A[i]
-        b=A[i+1]
-        if(a>b) smallest.pu
-
+    constructor(name) {
+      this.name = name;
     }
-    return answer
-}
-console.log(reOrderArray(A))
-function runIt(A){
-    for(let i=0; A.length>i;i++){
-        let current = A[i]
-
-        if(current==smallest) smallest = smallest + 1;
-        if(current<smallest) smallest = current + 1;
-    }
-    return smallest
-}
-
-console.log(runIt(A))
-
-// you can write to stdout for debugging purposes, e.g.
-// console.log('this is a debug message');
-// let A = [1, 3, 6, 4, 1, 2]
-// function solution(A) {
-//     // write your code in JavaScript (Node.js 8.9.4)
-//     let smallest
-//     if(A[0]<0) smallest = 1
-//     else if(A[0]==1) smallest = 2
-//     // else smallest = 1
-//     for(number of A){
-//         for(let i=0; A> i;i++){
+    
+    /**
+     * @return {boolean} true if the playlist is repeating, false if not.
+     */
+    isRepeatingPlaylist() {
+      // Your code goes here
+        for (let val in this){
+            console.log(typeof this == 'object')
             
-//         }
+            console.log(this)
+            console.log(val)
+            console.log(this[val])
+            // return this
+        }
+    }
+  }
+
+  let first = new Song("Hello");
+  let second = new Song("Eye of the tiger");
+  
+  first.nextSong = second;
+  second.nextSong = first;
+  
+  console.log(first.isRepeatingPlaylist());
+
+
+
+
+
+
+
+
+
+
+
+////////////////////TEST QUESTION - ANSWER///////////////////////////
+
+// let A = [1,3,6,4,1,2]
+
+// let smallest = 1;
+
+// function reOrderArray(A) {
+    
+//     let answer = []
+    
+//     while(A.length>0){
+//         let smallest = A[0]
+
+//         A.map( b =>{
+//             if(smallest>b) smallest = b
+//         })
+//         //remove the current smallest from the list and add it to the ordered array
+//         A.splice(A.indexOf(smallest), 1)
+//         answer.push(smallest)
+//     }
+//     return answer
+// }
+// A = reOrderArray(A)
+// console.log(A)
+// function runIt(A){
+//     for(let i=0; A.length>i;i++){
+//         let current = A[i]
+
+//         if(current==smallest) smallest = smallest + 1;
+//         if(current<smallest) smallest = current + 1;
 //     }
 //     return smallest
 // }
 
-// console.log(solution(A))
+// console.log(runIt(A))
+
+
 
 // ///////////////FINALLY MADE IT WORK! Circular Primes - Elapsed time for 1mil = 1611. With the "square root fix, it's now taking 389 milliseconds only////////
 
