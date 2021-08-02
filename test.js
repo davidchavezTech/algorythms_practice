@@ -1,43 +1,137 @@
-class Song {
-    name;
-    nextSong;
+let str = "ear afro i dont know"
+console.log(str.includes('x'))
+console.log(str.charAt(0))
+
+
+/////////REMOVE BUTTON ON CLICK TEST////////
+
+// function setup() {
+//   // Write your code here.
+//   let exes = document.querySelectorAll('.remove')
+//   exes.forEach(x =>{
+//     x.addEventListener(e =>{
+//       e.currentTarget.closest('.image').remove()
+//     })
+//   })
+// }
+
+// // Example case. 
+// document.body.innerHTML = `
+// <div class="image">
+//   <img src="https://goo.gl/kjzfbE" alt="First">
+//   <button class="remove">X</button>
+// </div>
+// <div class="image">
+//   <img src="https://goo.gl/d2JncW" alt="Second">
+//   <button class="remove">X</button>
+// </div>`;
+
+// setup();
+
+// document.getElementsByClassName("remove")[0].click();
+// console.log(document.body.innerHTML);
+
+
+// function formatDate(userDate) {
+//   // format from M/D/YYYY to YYYYMMDD
+//   console.log(userDate.split('/'))
+//   let splitUserDate = userDate.split('/')
+//   if(splitUserDate[0].length==1) splitUserDate[0] = `0${splitUserDate[0]}`
+//   if(splitUserDate[1].length==1) splitUserDate[1] = `0${splitUserDate[1]}`
+//   splitUserDate = [splitUserDate[2], splitUserDate[0],splitUserDate[1]]
+//   splitUserDate
+//   let response = splitUserDate.join('')
+//   return response
+// }
+
+// console.log(formatDate("12/31/2014"));
+
+
+// function removeProperty(obj, prop) {
+//   if(obj[prop]){
+//     delete obj[prop]
+//     return true
+//   }else return false;
+// }
+// let obj = {
+//     prop: 'yes'
+// }
+// console.log(removeProperty(obj, 'prop'))
+//////////////////// TEST CHECK ID/////////////////////////
+
+// function createCheckDigit(membershipId) {
+
+//   // Write the code that goes here.
+//   let response;
+//   let sum = 0 
+
+//   addDigists(membershipId)
+//   return response;
+
+//   function addDigists(arrayOfNumbers){
+//     sum = 0
+//     arrayOfNumbers = arrayOfNumbers.toString().split('')
+//     arrayOfNumbers.map(number=>{
+//       number = parseInt(number, 10)
+//       sum += number
+//     })
+//     if(sum.toString().split()[0].length==1) return response = sum
+//     else addDigists(sum)
+//   }
+// }
+
+// console.log(createCheckDigit("55555"));
+
+
+
+// function ensure(value) {
+//   // Your code goes here
+//   if(value==false) return false
+//   if(!value) throw "Function has no arguments"
+//   return value
+// }
+
+// try {
+//   console.log(ensure());
+// } catch(err) {
+//   console.log(err);
+// }
+
+/////// TEST repeating songs algorithm ///////////
+
+
+// class Song {
+//     name;
+//     nextSong;
     
-    constructor(name) {
-      this.name = name;
-    }
+//     constructor(name) {
+//       this.name = name;
+//     }
     
-    /**
-     * @return {boolean} true if the playlist is repeating, false if not.
-     */
-    isRepeatingPlaylist() {
-      // Your code goes here
-        for (let val in this){
-            console.log(typeof this == 'object')
-            
-            console.log(this)
-            console.log(val)
-            console.log(this[val])
-            // return this
-        }
-    }
-  }
+//     /**
+//      * @return {boolean} true if the playlist is repeating, false if not.
+//      */
+//     isRepeatingPlaylist() {
+//       // Your code goes here
+//       let response;
+//       repeating(this);
+//       return response;
+//       function repeating(obj){
+//         if(obj.nextSong == undefined) return response = false;
+//         if(obj.nextSong.name == first.name) return response = true;
+//         else repeating(obj.nextSong)
+//       }
+//     }
+//   }
 
-  let first = new Song("Hello");
-  let second = new Song("Eye of the tiger");
+//   let first = new Song("Hello");
+//   let second = new Song("Eye of the tiger");
+//   let third = new Song("Redbone");
   
-  first.nextSong = second;
-  second.nextSong = first;
-  
-  console.log(first.isRepeatingPlaylist());
-
-
-
-
-
-
-
-
-
+//   first.nextSong = second;
+//   second.nextSong = third;
+//   third.nextSong = first;
+//   console.log(first.isRepeatingPlaylist());
 
 
 ////////////////////TEST QUESTION - ANSWER///////////////////////////
