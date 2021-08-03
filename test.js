@@ -1,7 +1,51 @@
-let str = "ear afro i dont know"
-console.log(str.includes('x'))
-console.log(str.charAt(0))
+class HashMap{
+    constructor (){
+        this.size = 5
+        this.buckets = Array(this.size)
 
+        for(let i=0; this.buckets.length > i; i++){
+            this.buckets[i] = new Map;
+        }
+    }
+    
+    insert(key, value){
+        let indx = hashKey(key, this.size);
+        this.buckets[indx].set(key, value);
+    }
+
+    search(key){
+        let indx = hashKey(key, this.size);
+        let response = this.buckets[indx].get(key)
+        if(response) return response
+        return "Not found -- Case sensitive"
+    }
+
+    delete(key){
+        let indx = hashKey(key, this.size);
+        if(!this.buckets[indx].get(key)) return "Not found -- Case sensitive"
+        this.buckets[indx].delete(key);
+        return `Key "${key}" was deleted successfully`
+    }
+}
+
+const hashKey = (key, size) => {
+    let sum = 0;
+    for(letter of key){
+        sum += key.charCodeAt(key.indexOf(letter));
+    }
+    return sum % size;
+}
+
+let myMap = new HashMap;
+
+myMap.insert('key One', 'value one')
+myMap.insert('key two', 'value one')
+myMap.insert('key Three', 'value one')
+myMap.insert('key fhree', 'value one')
+myMap.insert('key free', 'value one')
+myMap.insert('key hgree', 'value one')
+console.log(myMap.search('key One'))
+console.log(myMap)
 
 /////////REMOVE BUTTON ON CLICK TEST////////
 
