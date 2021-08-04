@@ -1,51 +1,235 @@
-class HashMap{
-    constructor (){
-        this.size = 5
-        this.buckets = Array(this.size)
+let a = [-1, 150, 190, 170, -1, -1, 160, 180]
+let treesIndexes = []
+let treelessArray = []
+let myMap = new Map();
 
-        for(let i=0; this.buckets.length > i; i++){
-            this.buckets[i] = new Map;
+//store indexes
+(()=>{
+    a.filter((value, index) => { if(value==-1) treesIndexes.push(index) })
+    //create new array without "trees"
+    treelessArray = a.filter((element) => { if(element!=-1) return element });
+})();
+
+
+function getSmallest(array){
+
+    let smallestNumber = array[0];
+    let smallestIndex = 0;
+    for(let i=1; array.length > i;i++){
+        if(smallestNumber > array[i]) {
+            smallestNumber = array[i];
+            smallestIndex = i;
         }
     }
+    array.splice(smallestIndex, 1)
+    return smallestNumber
+}
+
+function order(array){
+    let orderedList = []
+    while(array.length != 0) orderedList.push(getSmallest(array));
+    return orderedList;
+}
+function insertTrees(treesIndexes){
+    treesIndexes.forEach( index => finalArray.splice( index, 0, -1 ) );
+    return finalArray
+}
+treelessArray
+let answer = treelessArray.sort((a,b) => a-b )
+answer
+finalArray = order(treelessArray)
+console.log(insertTrees(treesIndexes))
+
+// //create map of open values, and closing values  equivalents
+// const myMap = new Map();
+
+// myMap.set("{", "open")
+// myMap.set("[", "open")
+// myMap.set("(", "open")
+// myMap.set("}", "{")
+// myMap.set("]", "[")
+// myMap.set(")", "(")
+
+
+// // sort ({[asdf]asdfasdf}asdfasdf)
+
+// //create array to keep count
+// let arr = []
+
+// //iterate over the whole string
+// function isCorrectOrder(str) {
+//     for(let i = 0;i < str.length;i++) {
+//         // if current character = open, add it to counting array
+//         let currentValue = myMap.get(str[i]);
+//         if(currentValue=='open'){
+//             arr.push(str[i])
+//             continue
+//         } 
+//         if(currentValue!=undefined && areOpenAndClosingCorrectPair(arr[arr.length - 1], str[i]) == false) return false 
+//         if(myMap.get(currentValue)) arr.pop()
+//     }
+//     return arr.length===0 ? true : false
+// }
+
+// function areOpenAndClosingCorrectPair(open, close){
+//     if(open==myMap.get(close)) return true
+//     return false
+// }
+
+
+// console.log(isCorrectOrder('(([a{dfaas},l[]]){})'))
+
+//else if current value not open, compare its value (closing equivalent) to LAST element of counting array
+//if they match, cont,
+
+//if no match, return false
+
+
+
+
+///////seek and destroy////////
+// function seekAndDestroy(arr, ...rest){
+//     return arr.filter(value => !rest.includes(value))
+// }
+
+// console.log(seekAndDestroy([2,3,4,6,6, 'hello'], 2, 6))
+
+// function seekAndDestroy(arr){
+//     arr
+//     const args = Array.from(arguments)
+//     args
+//     function filterArr(arr){
+//         arr
+//         //Return true if NOT in array
+//         return args.indexOf(arr) === -1;
+//     }
+
+//     return arr.filter(filterArr)
+// }
+// console.log(seekAndDestroy([2,3,4,6,6, 'hello'], 2, 6))
+
+//////////////////////////////
+// function seekAndDestroy(array, ...values){
+//     values.forEach(value =>{
+//         for(let i=0; i < array.length; i++){
+//             if(value == array[i]) {
+//                 array.splice(i, 1)
+//                 i--;
+//             };
+//         }
+//     })
+//     return array
+// }
+
+// console.log(seekAndDestroy([2,3,4,6,6, 'hello'], 2, 6))
+
+
+/////////////// ADD ALL PRIMES ///////////////
+
+// function sumOfPrimes(number){
+//     let total = 0
+//     let iterations = 0
+//     for(let i = 2; i <= number; i++){
+//         if(isItPrime(i)) total += i
+//     }
+//     function isItPrime(number){
+//         for(let i = 2; i < number; i++){
+//             if(number % i === 0) return false
+//         }
+//         return true
+//     }
+//     return total
+// }
+// console.log(sumOfPrimes(100))
+
+/////////////REARANGE NUMBERS WITH MAP /////////////////////
+
+
+// const numbersMap = new Map()
+// numbersMap.set(0, 0);
+// numbersMap.set(1, 0);
+// numbersMap.set(2, 0);
+// numbersMap.set(3, 0);
+// numbersMap.set(4, 0);
+// numbersMap.set(5, 0);
+// numbersMap.set(6, 0);
+// numbersMap.set(7, 0);
+// numbersMap.set(8, 0);
+// numbersMap.set(9, 0);
+// console.log(numbersMap)
+
+// let unorderedNumber = 12540981235845023304
+
+// //set them in Map
+// for(number of unorderedNumber.toString()){
+//     number = parseInt(number, 10);
+//     currentValue = numbersMap.get(number)
+//     numbersMap.set(number, currentValue + 1)
+// }
+
+// console.log(numbersMap)
+// //arrange them
+// let arrangedNumbers = '';
+// numbersMap.forEach((value, key) => {
+//     for(let i = 0; value > i; i++){
+//         arrangedNumbers += key
+//     }
+// });
+
+
+
+// console.log(arrangedNumbers)
+
+
+///////////////////////// HASH MAP PRACTICE /////////////////////////
+// class HashMap{
+//     constructor (){
+//         this.size = 5
+//         this.buckets = Array(this.size)
+
+//         for(let i=0; this.buckets.length > i; i++){
+//             this.buckets[i] = new Map;
+//         }
+//     }
     
-    insert(key, value){
-        let indx = hashKey(key, this.size);
-        this.buckets[indx].set(key, value);
-    }
+//     insert(key, value){
+//         let indx = hashKey(key, this.size);
+//         this.buckets[indx].set(key, value);
+//     }
 
-    search(key){
-        let indx = hashKey(key, this.size);
-        let response = this.buckets[indx].get(key)
-        if(response) return response
-        return "Not found -- Case sensitive"
-    }
+//     search(key){
+//         let indx = hashKey(key, this.size);
+//         let response = this.buckets[indx].get(key)
+//         if(response) return response
+//         return "Not found -- Case sensitive"
+//     }
 
-    delete(key){
-        let indx = hashKey(key, this.size);
-        if(!this.buckets[indx].get(key)) return "Not found -- Case sensitive"
-        this.buckets[indx].delete(key);
-        return `Key "${key}" was deleted successfully`
-    }
-}
+//     delete(key){
+//         let indx = hashKey(key, this.size);
+//         if(!this.buckets[indx].get(key)) return "Not found -- Case sensitive"
+//         this.buckets[indx].delete(key);
+//         return `Key "${key}" was deleted successfully`
+//     }
+// }
 
-const hashKey = (key, size) => {
-    let sum = 0;
-    for(letter of key){
-        sum += key.charCodeAt(key.indexOf(letter));
-    }
-    return sum % size;
-}
+// const hashKey = (key, size) => {
+//     let sum = 0;
+//     for(letter of key){
+//         sum += key.charCodeAt(key.indexOf(letter));
+//     }
+//     return sum % size;
+// }
 
-let myMap = new HashMap;
+// let myMap = new HashMap;
 
-myMap.insert('key One', 'value one')
-myMap.insert('key two', 'value one')
-myMap.insert('key Three', 'value one')
-myMap.insert('key fhree', 'value one')
-myMap.insert('key free', 'value one')
-myMap.insert('key hgree', 'value one')
-console.log(myMap.search('key One'))
-console.log(myMap)
+// myMap.insert('key One', 'value one')
+// myMap.insert('key two', 'value one')
+// myMap.insert('key Three', 'value one')
+// myMap.insert('key fhree', 'value one')
+// myMap.insert('key free', 'value one')
+// myMap.insert('key hgree', 'value one')
+// console.log(myMap.search('key One'))
+// console.log(myMap)
 
 /////////REMOVE BUTTON ON CLICK TEST////////
 
