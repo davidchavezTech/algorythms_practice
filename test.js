@@ -1,10 +1,98 @@
+
+
+
+////////////////ITERATE OVER OBJECT'S KEYS, VALUES, AND ENTRIES
+
+// let myObj = {
+//     'yes': 'yeap',
+//     'no': 'nope',
+//     'wtf': '',
+//     'yer':'who'
+// }
+
+// for([key, value] of Object.entries(myObj)) console.log(`${key}: ${value}`)
+
+// console.log(Object.keys(myObj))
+// console.log(Object.values(myObj))
+// console.log(Object.entries(myObj))
+///////////SET PROTOTYPE//////////////////
+
+// const vehicle = {
+//     name: 'yeah',
+//     drive: function(){
+//         console.log(this.name, 'yes');
+//     }
+// };
+
+// const car = {
+//     drive: function(){
+//         console.log(this.name,'test');
+//     }
+// };
+
+// Object.setPrototypeOf(car, vehicle);
+// car.drive();
+
+// //////THIS practice//////////
+// const person = {
+//     name: "Chaim",
+//     sayName: function(){
+//         console.log(this.name);
+//     },
+//     test: function(){
+//         (()=>{
+//             this.answer = 'yes'
+//             console.log(this)
+//         })();
+//         // function myFunc(){
+//         //     this.example = 'yes'
+//         //     console.log(this)
+//         // }myFunc()
+        
+//     }
+// }
+// // person.sayName()
+// // const localSayName = person.sayName.bind(person)
+// // localSayName()
+
+// person.sayName()
+// person.test();
+//////////////PROMISES PRACTICE////////////////////
+
+// function getNumber(number, cb){
+//     setTimeout(() => {
+//         cb(number+3);
+//     }, 3000);
+// }
+
+// // getNumber(1, n =>{
+// //     console.log(n)
+// // })
+
+// function getNumberPromise(){
+//     return new Promise((resolve, reject)=>{
+//             setTimeout(() => {
+//                 resolve(3)
+//             }, 3000);
+//     })
+// }
+// const promise = getNumberPromise();
+// console.log(promise)
+// promise.then(n => console.log(promise))
+// console.log('yes')
+//******************FIND OUT DIFFERENCE BETWEEN VARIABLE = FUNCTION (FUNCTION EXPRESSIONS) AND FUNCTION KEYWORD FUNCTIONS (FUNCTION DECLARATIONS) */
+//******************PRIVATE VARIABLES */
+//******************LEXICAL SCOPE */
+//******************calll and bind */
+//******************prototype - setPrototypeOf - ___prototype____ */
+
 //////////GET MIN AND MAX VALUES FROM ARRAY/////////////
 
-let arr = [1,2,3,4,10]
+// let arr = [1,2,3,4,10]
 
-const min = Math.min.apply(null, arr)
-const max = Math.max.apply(null, arr)
-console.log(min, max)
+// const min = Math.min.apply(null, arr)
+// const max = Math.max.apply(null, arr)
+// console.log(min, max)
 
 ////////////////// FIND LENGTH //////////////
 
@@ -191,6 +279,11 @@ console.log(min, max)
 //             console.log(this.x) 
 //         }
 //         inner.bind(this)();
+//         ////OR
+//         // const inner = ()=> {
+//         //     console.log(this.x) 
+//         // }
+//         // inner();
 //     }
 // }
 // obj.getX();
