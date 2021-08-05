@@ -1,44 +1,388 @@
-let a = [-1, 150, 190, 170, -1, -1, 160, 180]
-let treesIndexes = []
-let treelessArray = []
-let myMap = new Map();
+//////////GET MIN AND MAX VALUES FROM ARRAY/////////////
 
-//store indexes
-(()=>{
-    a.filter((value, index) => { if(value==-1) treesIndexes.push(index) })
-    //create new array without "trees"
-    treelessArray = a.filter((element) => { if(element!=-1) return element });
-})();
+let arr = [1,2,3,4,10]
+
+const min = Math.min.apply(null, arr)
+const max = Math.max.apply(null, arr)
+console.log(min, max)
+
+////////////////// FIND LENGTH //////////////
+
+// let x = 1234;
+// let counter = 10
+// let length = 1
+// // let stopper = true
+
+// function findLength(x){
+//     while(true){
+//         if(x / 10 < 1) return 1
+//         if(x / counter >= 1){
+//             counter *= 10
+//             length++
+//         }else{
+//             return length
+//         }
+//     }
+// }
+// console.log(findLength(x))
+
+/////////////// SUM OF NUMBERS MINUS MIN AND MINUS MAX ////////////////
+
+// const arr = [2,1,3,4]
+
+// let sortedArray = arr.sort((a,b) => a - b)
+
+// let answer = [sortedArray[0], sortedArray[sortedArray.length-1]]
+// console.log(answer)
+
+// const arr = [2,1,3,4];
+// const finalObject = {}
+
+// //remove a number from the array
+// function pickNumber(arr){
+//     for(let i=0;i<arr.length;i++){
+//         let addition = addNumbers(i, arr)
+//         finalObject[arr[i]] = addition
+//     }
+//     function addNumbers(index, arr){
+//         let tempArr = Array.from(arr)
+//         tempArr.splice(index,1)
+//         let response = 0
+//         for(number of tempArr) response += number
+//         return response 
+//     }
+// }pickNumber(arr)
+// pickNumber(arr)
+// let arrOfkeys = Object.keys(finalObject)
+// console.log(arrOfkeys[0])
+// console.log(arrOfkeys[arrOfkeys.length-1])
+
+//add the remaining numbers in array
+//store the addition in object
+//pick highest, lowest and return in an array
+
+// /////////////////CHANGE DISPENSER///////////////////////
+// const til = {
+//     penny:12,
+//     nickel:10,
+//     dime:2,
+//     quarter:12,
+//     dollar:30
+// }
+// const coinsToGive = {
+//     penny:0,
+//     nickel:0,
+//     dime:0,
+//     quarter:0,
+//     dollar:0
+// }
+// let changeLeft
+
+// changeLeft = 20.47
+
+// function coins(coinsWorth, coin){
+//     changeLeft
+//     let accumulator = 0
+//     while(coinsWorth <= changeLeft && til[coin] != 0){
+//         accumulator++
+//         til[coin]--
+//         changeLeft -= coinsWorth
+//         changeLeft = round(changeLeft)
+//         changeLeft
+//     }
+//     coinsToGive[coin] = accumulator
+// }
+// function round(number){
+//     return parseFloat(number.toFixed(2))
+// }
+// let coinsWorthArray = {
+//     dollar:1,
+//     quarter:.25,
+//     dime:.1,
+//     nickel:.05,
+//     penny:.01
+// }
+// function getChange(){
+//     for(key in coinsWorthArray){
+//         if(changeLeft===0) return
+//         coins(coinsWorthArray[key], key)
+//     }
+// }
+// getChange(20.47)
+// console.log(coinsToGive)
 
 
-function getSmallest(array){
 
-    let smallestNumber = array[0];
-    let smallestIndex = 0;
-    for(let i=1; array.length > i;i++){
-        if(smallestNumber > array[i]) {
-            smallestNumber = array[i];
-            smallestIndex = i;
-        }
-    }
-    array.splice(smallestIndex, 1)
-    return smallestNumber
-}
+//////DIFFERENT WAYS TO CREATE A CLASS ////////
 
-function order(array){
-    let orderedList = []
-    while(array.length != 0) orderedList.push(getSmallest(array));
-    return orderedList;
-}
-function insertTrees(treesIndexes){
-    treesIndexes.forEach( index => finalArray.splice( index, 0, -1 ) );
-    return finalArray
-}
-treelessArray
-let answer = treelessArray.sort((a,b) => a-b )
-answer
-finalArray = order(treelessArray)
-console.log(insertTrees(treesIndexes))
+// const contruct = function (name){
+//     this.name = name
+// }
+// class constClass {
+//     constructor(name){
+//         this.name = name
+//     }
+// }
+
+// let tryOne = new contruct('David')
+// let tryTwo = new constClass('Chavez')
+// console.log(tryOne)
+// console.log(tryTwo)
+
+////////// FIND MISSING NUMBER //////////////
+
+// const ary = [10,1,2,3,4,5,6,7] // 1 number is missing
+// let sortedArray = ary.sort((a,b)=>a-b)
+// for(let i=0; ary.length>i;i++){
+//     if((sortedArray[i+1]-sortedArray[i])!=1) {
+//         console.log(sortedArray[i] + 1)
+//         break
+//     }
+// }
+
+
+////////////DOUBLE ARGUMENT FUNCTION //////////////////
+
+// //add(1,2)
+// //add(1)(2);
+
+// let number= 0
+// function add(n1, n2) {
+//     if(n1,n2){
+//         return number = n1+n2;
+//     }else{
+//         return function(n3){
+//             number = n1+n3
+//         }
+//     }
+// }
+// add(1,2)
+// console.log(number)
+// add(1)(5)
+// console.log(number)
+
+
+////////////// CALL usage ///////////////////
+
+// const a = function(x) {
+//     this.x = x;
+// }
+// const b = function (x,y){
+//     this.y = y;
+//     a.call(this, x);
+//     // this.x = new a(x).x
+//     this.getX = function (){
+//         return this.x
+//     }
+//     this.getY = function(){
+//         return this.y
+//     }
+// }
+
+// const newB = new b('s', 'y');
+// console.log(newB.getX());
+// newB.getY();
+///////////BIND this to function or you can just change the function to arrow function
+
+// const obj = {
+//     x:1,
+//     getX(){
+//         const inner = function () {
+//             console.log(this.x) 
+//         }
+//         inner.bind(this)();
+//     }
+// }
+// obj.getX();
+////////////// SORT numbers(even with repeated ones), with an object
+
+// const example = [5,9,4,6,7,8,9];
+// let newObj = {};
+// example.forEach(number =>{
+//     if(newObj[number]) newObj[number].push(number)
+//     else newObj[number] = [number];
+// })
+// console.log(newObj)
+
+// let answer = []
+// for(x in newObj){
+//     if(newObj[x].length===1) answer.push(newObj[x][0])
+//     else newObj[x].forEach(number => answer.push(number))
+// }
+// console.log(answer)
+
+// const a = [1,2,5,7,9,10,11,101,1000];
+// const b = [2,5,7,12,100];
+
+// function sortThem(a, b){
+//     let response = []
+//     while(!(a.length==0 || b.length==0)){
+        
+//         if(a[0]<b[0]) response.push(a.splice(0,1)[0])
+//         else if(a[0]==b[0]) response.push(a.splice(0,1)[0],b.splice(0,1)[0])
+//         else if(a[0]>b[0])response.push(b.splice(0,1)[0])
+//     }
+//     if(b.length!=0) response = [...response, ...b]
+//     else if(a.length!=0) response = [...response, ...a]
+//     return response
+// }
+// console.log(sortThem(a, b))
+
+///////////// Deep cloning /////////////////
+
+// const obj = {
+//     a:{
+//         b:{
+//             c:1
+//         }
+//     }
+// };
+
+// const clone = JSON.parse(JSON.stringify(obj))
+
+// clone.a.b.c = 2
+// console.log((obj.a.b.c))
+// console.log((clone.a.b.c))
+
+// function getValue(obj){
+//     let response
+//     function iterate(obj){
+//         for(key in obj){
+//             if(typeof obj[key] === 'object') {
+//                 iterate(obj[key])
+//             }
+//             else{
+//                 response = obj[key]
+//             }
+//         }
+//     }
+//     iterate(obj)
+//     return response
+// }
+// console.log(getValue(obj))
+///////////// const constructors //////////////
+
+// const a = function (x) {
+//     this.x = x;
+// };
+
+// const b = function (x, y) {    
+//     this.y = y;
+//     this.x = new a(x).x
+//     console.log(this.x)
+//     this.getX = ()=> x;
+//     this.getY = () => this.y
+// }
+
+// const newB = new b('x', 'y');
+
+// console.log(newB.getX());
+// console.log(newB.getY());
+
+///////// Creating PROTOTYPE CONSTRUCTORS //////////
+
+
+// Array.prototype.print = function() {
+//     console.log(this.toString())
+//     let response = '';
+//     this.forEach(elem => response += `${elem},`)
+//     response = response.slice(0, response.length-1)
+//     console.log(response) 
+//   };
+  
+//   // Use the method on any array
+
+//   [1,2].print();
+
+
+
+
+//////////CHAINING METHODS//////////////
+
+
+// const obj = {
+//     a:1,
+//     b:2,
+//     getA(){
+//         console.log(this.a);
+//         return this
+//     },
+//     getB(){
+//         console.log(this.b);
+//     }
+// };
+
+// obj.getA().getB();
+
+//////////////REVERSE string//////////////////
+
+// let x = "hello";
+
+// let y = "ih";
+
+// let answer = x.split('').reduce((prev, next) => prev = next + prev )
+// console.log(answer)
+
+/////// convert values from object into an array
+
+// let x = {
+//     a:1, 
+//     b:2,
+//     c:3
+// };
+// let arr = []
+// for( const i in x) {
+//     console.log(x[i])
+//     console.log(i)
+//     // console.log(value)
+// }
+// const xArr = Object.values(x);
+// console.log(xArr)
+
+//////////////////////TREES///////////////
+
+
+// let a = [-1, 150, 190, 170, -1, -1, 160, 180]
+// let treesIndexes = []
+// let treelessArray = []
+// let myMap = new Map();
+
+// //store indexes
+// (()=>{
+//     a.filter((value, index) => { if(value==-1) treesIndexes.push(index) })
+//     //create new array without "trees"
+//     treelessArray = a.filter((element) => { if(element!=-1) return element });
+// })();
+
+
+// function getSmallest(array){
+
+//     let smallestNumber = array[0];
+//     let smallestIndex = 0;
+//     for(let i=1; array.length > i;i++){
+//         if(smallestNumber > array[i]) {
+//             smallestNumber = array[i];
+//             smallestIndex = i;
+//         }
+//     }
+//     array.splice(smallestIndex, 1)
+//     return smallestNumber
+// }
+
+// function order(array){
+//     let orderedList = []
+//     while(array.length != 0) orderedList.push(getSmallest(array));
+//     return orderedList;
+// }
+// function insertTrees(treesIndexes){
+//     treesIndexes.forEach( index => finalArray.splice( index, 0, -1 ) );
+//     return finalArray
+// }
+// treelessArray
+// let answer = treelessArray.sort((a,b) => a-b )
+// answer
+// finalArray = order(treelessArray)
+// console.log(insertTrees(treesIndexes))
 
 // //create map of open values, and closing values  equivalents
 // const myMap = new Map();
