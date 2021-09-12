@@ -1,3 +1,35 @@
+let myPromise = new Promise(function(myResolve, myReject) {
+    // "Producing Code" (May take some time)
+    
+      myResolve("in promise"); // when successful
+      myReject();  // when error
+});
+    
+    // "Consuming Code" (Must wait for a fulfilled Promise)
+myPromise.then(
+    function(value) { console.log(value) },
+    function(error) { console.log(error) }
+);
+console.log("outside of promise")
+
+
+// const getProm = function (cb){
+//     setTimeout(()=>{
+//         cb(3)
+//     },1000)    
+// }
+// getProm(n =>{
+//     console.log(n)
+// })
+
+// let promise = new Promise((resolve, reject) => {
+//     setTimeout(()=>{
+//         resolve(3)
+//     },1000)
+// });
+// console.log(promise)
+// promise.then(response => console.log(response))
+//******************calll and bind */
 
 
 
@@ -65,9 +97,9 @@
 //     }, 3000);
 // }
 
-// // getNumber(1, n =>{
-// //     console.log(n)
-// // })
+// getNumber(1, n =>{
+//     console.log(n)
+// })
 
 // function getNumberPromise(){
 //     return new Promise((resolve, reject)=>{
@@ -80,11 +112,7 @@
 // console.log(promise)
 // promise.then(n => console.log(promise))
 // console.log('yes')
-//******************FIND OUT DIFFERENCE BETWEEN VARIABLE = FUNCTION (FUNCTION EXPRESSIONS) AND FUNCTION KEYWORD FUNCTIONS (FUNCTION DECLARATIONS) */
-//******************PRIVATE VARIABLES */
-//******************LEXICAL SCOPE */
-//******************calll and bind */
-//******************prototype - setPrototypeOf - ___prototype____ */
+
 
 //////////GET MIN AND MAX VALUES FROM ARRAY/////////////
 
