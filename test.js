@@ -1,16 +1,60 @@
-let myPromise = new Promise(function(myResolve, myReject) {
-    // "Producing Code" (May take some time)
-    
-      myResolve("in promise"); // when successful
-      myReject();  // when error
+function download(url, callback) {
+    setTimeout(() => {
+        // script to download the picture here
+        console.log(`Downloading ${url} ...`);
+        // process the picture once it is completed
+        callback(url);
+    }, 3000);
+}
+
+const url1 = 'https://www.javascripttutorial.net/pic1.jpg';
+const url2 = 'https://www.javascripttutorial.net/pic2.jpg';
+const url3 = 'https://www.javascripttutorial.net/pic3.jpg';
+
+download(url1,function(picture){
+    console.log(`Processing ${picture}`);
+    // download the second picture
+    download(url2,function(picture){
+        console.log(`Processing ${picture}`);
+        // download the third picture
+        download(url3,function(picture){
+            console.log(`Processing ${picture}`);
+        });
+    });
 });
+console.log("thing 1")
+console.log("thing 2")
+console.log("thing 3")
+// function yes(cb){
+//     console.log("inside")
+//     cb();
+// }
+// yes(function (){
+//     console.log("inside cb")
+// })
+
+// let myPromise = new Promise(function(myResolve, myReject) {
+//     // "Producing Code" (May take some time)
+//     try{
+//         setTimeout(()=>{
+//             myResolve("in promise"); // when successful
+//         }, 2000)
+//     }catch(error){
+//         myReject(error);  // when error
+//     }
+// });
     
-    // "Consuming Code" (Must wait for a fulfilled Promise)
-myPromise.then(
-    function(value) { console.log(value) },
-    function(error) { console.log(error) }
-);
-console.log("outside of promise")
+// console.log(myPromise)
+//     // "Consuming Code" (Must wait for a fulfilled Promise)
+// myPromise.finally(()=>{
+//     console.log("finally")
+// }).then(
+//     function(value) { console.log(value) },
+//     function(error) { console.log("hi", error) }
+// ).finally(()=>{
+//     console.log("second finally")
+// });
+// console.log("outside of promise")
 
 
 // const getProm = function (cb){
